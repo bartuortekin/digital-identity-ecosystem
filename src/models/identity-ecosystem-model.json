@@ -1,0 +1,63 @@
+{
+  "identityTypes": [
+    "real",
+    "alt",
+    "brand",
+    "anonymous",
+    "bot",
+    "organization",
+    "ai",
+    "influencer",
+    "service"
+  ],
+
+  "relationTypes": [
+    "owns",
+    "created_by",
+    "influences",
+    "hides",
+    "reveals",
+    "depends_on",
+    "linked_to",
+    "cooperates_with",
+    "mimics"
+  ],
+
+  "nodeProperties": [
+    "id",
+    "name",
+    "platform",
+    "type",
+    "visibility",
+    "goal",
+    "style",
+    "energyLevel",
+    "trustLevel",
+    "status",
+    "tags",
+    "connections"
+  ],
+
+  "visibilityLevels": ["public", "semi-private", "private", "shadow"],
+
+  "identityDynamics": [
+    "spawn",         
+    "merge",         
+    "ghost",        
+    "echo",         
+    "drift",         
+    "split",         
+    "amplify"        
+  ],
+
+  "useCases": [
+    "personal ecosystem map",
+    "analyze coordinated identity networks",
+    "track growth of online influence",
+    "detect fake or echo accounts",
+    "organize life by alt goals",
+    "protect high-value real identities",
+    "simulate identity evolution",
+    "generate visual story of identity evolution"
+  ]
+} 
