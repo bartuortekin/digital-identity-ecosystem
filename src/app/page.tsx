@@ -6,12 +6,15 @@ import { supabase } from "../lib/supabaseClient";
 import AddIdentityForm from "../components/AddIdentityForm";
 
 export default function Page() {
-  const [identities, setIdentities] = useState<any[]>(() => {
-    // Load from localStorage if exists
-    const saved = localStorage.getItem("identities");
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [identities, setIdentities] = useState<any[]>([]);
   const [currentUser, setCurrentUser] = useState<string | null>(null);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("identities");
+    if (saved) {
+      setIdentities(JSON.parse(saved));
+    }
+  }, []);
   const [loading, setLoading] = useState(true);
 
   const router = useRouter();
@@ -28,10 +31,12 @@ export default function Page() {
     });
 
     // Listen for auth changes
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) setCurrentUser(session.user.email);
-      else router.push("/login");
-    });
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        if (session?.user) setCurrentUser(session.user.email);
+        else router.push("/login");
+      }
+    );
 
     return () => listener.subscription.unsubscribe();
   }, [router]);
