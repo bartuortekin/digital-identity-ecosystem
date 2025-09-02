@@ -57,7 +57,7 @@ export default function Page() {
 
   return (
     <div className="max-w-5xl mx-auto p-6 min-h-screen bg-zinc-50 text-zinc-900">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-center items-center mb-6">
         <h1 className="text-3xl font-bold">🌐 Digital Identity Ecosystem</h1>
       </div>
 
