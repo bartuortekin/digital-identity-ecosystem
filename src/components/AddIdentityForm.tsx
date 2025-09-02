@@ -146,7 +146,11 @@ export default function AddIdentityForm({
                       <strong>Visibility:</strong> {identity.visibility}
                     </p>
                     <button
-                      onClick={() => handleDelete(index)}
+                      onClick={() =>
+                        handleDelete(
+                          identities.findIndex((id) => id === identity)
+                        )
+                      }
                       className="text-red-600 hover:text-red-800 font-bold"
                     >
                       ✕
