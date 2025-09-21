@@ -138,9 +138,9 @@ export default function AddIdentityForm({
                     key={index}
                     className="p-4 bg-white rounded-xl shadow border border-zinc-200"
                   >
-                    <h4 className="text-lg font-bold">{identity.name}</h4>
+                    <h4 className="text-lg font-bold">{identity.platform}</h4>
                     <p>
-                      <strong>Platform:</strong> {identity.platform}
+                      <strong>Name:</strong> {identity.name}
                     </p>
                     <p>
                       <strong>Visibility:</strong> {identity.visibility}
