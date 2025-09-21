@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type Identity = {
   name: string;
@@ -9,11 +9,14 @@ type Identity = {
   visibility: string;
 };
 
-interface Props {
-  identities?: Identity[]; // make optional
-}
+const IdentitiesList: React.FC = () => {
+  const [identities, setIdentities] = useState<Identity[]>([]);
 
-const IdentitiesList: React.FC<Props> = ({ identities = [] }) => {
+  useEffect(() => {
+    const saved = localStorage.getItem("identities");
+    if (saved) setIdentities(JSON.parse(saved));
+  }, []);
+
   if (!identities.length)
     return <p className="ml-64 p-6 text-gray-600">No identities added yet.</p>;
 

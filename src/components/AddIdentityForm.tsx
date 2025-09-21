@@ -151,7 +151,7 @@ export default function AddIdentityForm({
                           identities.findIndex((id) => id === identity)
                         )
                       }
-                      className="text-red-600 hover:text-red-800 font-bold"
+                      className="text-blue-600 hover:text-red-800 font-bold"
                     >
                       ✕
                     </button>
